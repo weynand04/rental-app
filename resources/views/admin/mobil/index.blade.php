@@ -4,7 +4,7 @@
     <div class="card">
         <div class="card-header d-flex justify-content-between align-item-center">
             <h3>Daftar Mobil</h3>
-            <a href="#" class="btn btn-primary">
+            <a href="{{ route('mobil.create') }}" class="btn btn-primary">
                 Tambah Data
             </a>
         </div>
@@ -21,25 +21,29 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($mobil as $mobil)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $mobil->nama }}</td>
-                                <td>
-                                    <img src="{{ Storage::url($mobil->gambar) }}" width="200" alt="{{ $mobil->nama }}">
-                                </td>
-                                <td>{{ $mobil->harga_sewa }}</td>
-                                <td>{{ $mobil->status }}</td>
-                                <td>
-                                    <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                                    <a href="#" class="btn btn-sm btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-                        @empty
+                        @if ($mobil->isEmpty())
                             <tr>
                                 <td colspan="6" class="text-center">Data Kosong</td>
                             </tr>
-                        @endforelse
+                        @else
+                            @foreach ($mobil as $item)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $item->nama }}</td>
+                                    <td>
+                                        <img src="{{ Storage::url($item->gambar) }}" width="200"
+                                            alt="{{ $item->nama }}">
+                                    </td>
+                                    <td>{{ $item->harga_sewa }}</td>
+                                    <td>{{ $item->status }}</td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                                        <a href="#" class="btn btn-sm btn-danger">Hapus</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @endif
+
                     </tbody>
                 </table>
             </div>
