@@ -10,4 +10,16 @@ class HomeController extends Controller
     {
         return view("homepage.landing");
     }
+    public function contactus()
+    {
+        return view("homepage.contactus");
+    }
+    public function aboutus()
+    {
+        return view("homepage.aboutus");
+    }
+    public function detail()
+    {
+        return view("homepage.detail");
+    }
 }
