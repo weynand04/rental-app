@@ -19,3 +19,6 @@ Route::get('/contactus', [\App\Http\Controllers\HomeController::class, 'contactu
 Route::get('/aboutus', [\App\Http\Controllers\HomeController::class, 'aboutus'])->name('aboutus');
 
 Route::get('admin/dashboard', [\App\Http\Controllers\admin\DasboardController::class, 'index'])->name('admin.dashboard.index');
+
+Auth::routes();
+
