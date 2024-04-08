@@ -5,7 +5,7 @@
             <small class="fs-8">View All</small></a>
         </h4>
         <div class="col-md-4 mb-3">
-            <a href="single.html">
+            <a href="{{ route('detail') }}">
                 <div class="app-cover p-2 shadow-md bg-white">
                     <div class="row">
                     <div class="img-cover pe-0 col-4"> <img class="rounded" src="{{ asset('template/homepage/assets/images/books/1.jpg')}}" alt=""></div>
@@ -29,7 +29,7 @@
             </a>
         </div>
         <div class="col-md-4 mb-3">
-            <a href="single.html">
+            <a href="{{ route('detail') }}">
                 <div class="app-cover p-2 shadow-md bg-white">
                     <div class="row">
                     <div class="img-cover pe-0 col-4"> <img class="rounded" src="{{ asset('template/homepage/assets/images/books/2.png') }}" alt=""></div>
@@ -53,7 +53,7 @@
             </a>
         </div>
         <div class="col-md-4 mb-3">
-            <a href="single.html">
+            <a href="{{ route('detail') }}">
                 <div class="app-cover p-2 shadow-md bg-white">
                     <div class="row">
                     <div class="img-cover pe-0 col-4"> <img class="rounded" src="{{ asset('template/homepage/assets/images/books/3.png') }}" alt=""></div>
