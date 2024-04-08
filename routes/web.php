@@ -18,7 +18,8 @@ route::get('/detail', [\App\Http\Controllers\HomeController::class, 'detail'])->
 Route::get('/contactus', [\App\Http\Controllers\HomeController::class, 'contactus'])->name('contactus');
 Route::get('/aboutus', [\App\Http\Controllers\HomeController::class, 'aboutus'])->name('aboutus');
 
-Route::get('admin/dashboard', [\App\Http\Controllers\admin\DasboardController::class, 'index'])->name('admin.dashboard.index')->middleware('is_admin');
+Route::get('admin/dashboard', [\App\Http\Controllers\Admin\DasboardController::class, 'index'])->name('admin.dashboard.index')->middleware('is_admin');
+Route::resource('admin/mobil', \App\Http\Controllers\Admin\MobilController::class);
 
 Auth::routes();
 
