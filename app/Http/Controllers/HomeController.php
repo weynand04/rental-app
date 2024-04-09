@@ -38,8 +38,9 @@ class HomeController extends Controller
             'alert-type' => 'warning'
         ]);
     }
-    public function detail()
+    public function detail(mobil $mobil)
     {
-        return view("homepage.detail");
+
+        return view("homepage.detail", compact('mobil'));
     }
 }
