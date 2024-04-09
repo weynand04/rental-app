@@ -6,7 +6,7 @@
             Form Tambah Data
         </div>
         <div class="card-body">
-            <form action="{{ route('mobil.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.mobil.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama Mobil</label>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="deskripsi" class="form-label">Deskripsi</label>
-                    <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3"></textarea>
+                    <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" value="{{ old('deskripsi') }}"></textarea>
                 </div>
                 <div class="form-check mb-3">
                     <input class="form-check-input" type="checkbox" value="1" id="p3k" name="p3k">

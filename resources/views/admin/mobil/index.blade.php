@@ -4,7 +4,7 @@
     <div class="card">
         <div class="card-header d-flex justify-content-between align-item-center">
             <h3>Daftar Mobil</h3>
-            <a href="{{ route('mobil.create') }}" class="btn btn-primary">
+            <a href="{{ route('admin.mobil.create') }}" class="btn btn-primary">
                 Tambah Data
             </a>
         </div>
@@ -37,8 +37,15 @@
                                     <td>{{ $item->harga_sewa }}</td>
                                     <td>{{ $item->status }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                                        <a href="#" class="btn btn-sm btn-danger">Hapus</a>
+                                        <a href="{{ route('admin.mobil.edit', $item->id) }}"
+                                            class="btn btn-sm btn-warning">Edit</a>
+                                        <form onclick="return confirm('Apakah Anda ingin Menghapus data ?');"
+                                            class="d-inline" action="{{ route('admin.mobil.destroy', $item->id) }}"
+                                            method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

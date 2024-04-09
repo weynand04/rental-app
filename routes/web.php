@@ -18,9 +18,11 @@ route::get('/detail', [\App\Http\Controllers\HomeController::class, 'detail'])->
 Route::get('/contactus', [\App\Http\Controllers\HomeController::class, 'contactus'])->name('contactus');
 Route::get('/aboutus', [\App\Http\Controllers\HomeController::class, 'aboutus'])->name('aboutus');
 
-Route::get('admin/dashboard', [\App\Http\Controllers\Admin\DasboardController::class, 'index'])->name('admin.dashboard.index')->middleware('is_admin');
-Route::resource('admin/mobil', \App\Http\Controllers\Admin\MobilController::class);
+Route::group(['middleware' => 'is_admin', 'prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::get('dashboard', [\App\Http\Controllers\Admin\DasboardController::class, 'index'])->name('dashboard.index');
+    Route::resource('mobil', \App\Http\Controllers\Admin\MobilController::class);
+    Route::put('mobil/update-gambar/{id}', [\App\Http\Controllers\Admin\MobilController::class, 'updateGambar'])->name('mobil.update-gambar');
+});
+
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
