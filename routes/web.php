@@ -15,8 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('homepage');
 route::get('/detail', [\App\Http\Controllers\HomeController::class, 'detail'])->name('detail');
-Route::get('/contactus', [\App\Http\Controllers\HomeController::class, 'contactus'])->name('contactus');
 Route::get('/aboutus', [\App\Http\Controllers\HomeController::class, 'aboutus'])->name('aboutus');
+Route::get('/contactus', [\App\Http\Controllers\HomeController::class, 'contactus'])->name('contactus');
+Route::post('/contactus', [\App\Http\Controllers\HomeController::class, 'contactStore'])->name('contactus.store');
 
 Route::group(['middleware' => 'is_admin', 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('dashboard', [\App\Http\Controllers\Admin\DasboardController::class, 'index'])->name('dashboard.index');

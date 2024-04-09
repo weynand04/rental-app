@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Message;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -10,13 +11,29 @@ class HomeController extends Controller
     {
         return view("homepage.landing");
     }
+    public function aboutus()
+    {
+        return view("homepage.aboutus");
+    }
     public function contactus()
     {
         return view("homepage.contactus");
     }
-    public function aboutus()
+
+    public function contactStore(Request $request)
     {
-        return view("homepage.aboutus");
+        $data = $request->validate([
+            "nama" => "required",
+            "email" => "required",
+            "subject" => "required",
+            "pesan" => "required",
+        ]);
+
+        Message::create($data);
+        return redirect()->back()->with([
+            'message' => 'Pesan Anda berhasil terkirim',
+            'alert-type' => 'warning'
+        ]);
     }
     public function detail()
     {
