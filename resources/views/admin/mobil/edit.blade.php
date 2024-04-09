@@ -28,7 +28,7 @@
                         </div>
                         <div class="mb-3 form-group">
                             <label for="jumlah_kursi" class="form-label">Jumlah Kursi</label>
-                            <input type="text" class="form-control" id="jumlah_kursi" name="jumlah_kursi"
+                            <input type="number" class="form-control" id="jumlah_kursi" name="jumlah_kursi"
                                 value="{{ old('jumlah_kursi', $mobil->jumlah_kursi) }}">
                         </div>
                         <div class="mb-3 form-group">
