@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Message;
+use App\Models\mobil;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view("homepage.landing");
+        $mobil = mobil::latest()->get();
+
+        return view("homepage.landing", compact('mobil'));
     }
     public function aboutus()
     {
