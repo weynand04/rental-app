@@ -23,6 +23,8 @@ Route::group(['middleware' => 'is_admin', 'prefix' => 'admin', 'as' => 'admin.']
     Route::get('dashboard', [\App\Http\Controllers\Admin\DasboardController::class, 'index'])->name('dashboard.index');
     Route::resource('mobil', \App\Http\Controllers\Admin\MobilController::class);
     Route::put('mobil/update-gambar/{id}', [\App\Http\Controllers\Admin\MobilController::class, 'updateGambar'])->name('mobil.update-gambar');
+    Route::get('message', [\App\Http\Controllers\Admin\messageController::class, 'index'])->name('message.index');
+    Route::delete('message/{message}', [\App\Http\Controllers\Admin\messageController::class, 'destroy'])->name('message.destroy');
 });
 
 

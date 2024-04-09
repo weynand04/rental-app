@@ -11,6 +11,10 @@
                 <div class="sb-nav-link-icon"><i class="fas fa-car"></i></div>
                 Data Mobil
             </a>
+            <a class="nav-link" href="{{ route('admin.message.index') }}">
+                <div class="sb-nav-link-icon"><i class="fas fa-message"></i></div>
+                Pesan Masuk
+            </a>
         </div>
     </div>
     <div class="sb-sidenav-footer">
