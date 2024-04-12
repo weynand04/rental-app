@@ -26,9 +26,9 @@
                                 <span>{{ $item->transmisi }}</span>
                             </li>
                         </ul>
-                        <b class="fs-6">Harga Sewa : Rp. {{ $item->harga_sewa }}</b>
+                        <b class="fs-6">Harga Sewa : Rp. {{ number_format($item->harga_sewa, 2, ',', '.') }}</b>
                     </div>
-                    <div class="d-flex justify-content-around mt-3">
+                    <div class="d-flex justify-content-around my-3">
                         <a class="btn  btn-primary w-45 fw-semi fs-8" href="#">Sewa</a>
                         <a class="btn btn-outline-primary w-45 fw-semi fs-8" href="{{ route('detail', $item->slug) }}">
                             Detail
