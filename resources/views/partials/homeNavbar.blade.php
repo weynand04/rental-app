@@ -1,7 +1,7 @@
     <div class="row">
         <div class="col-md-5">
             <div class="input-group mb-0">
-                <input type="text" class="form-control border-end-0 mb-0" placeholder="Search Apps"
+                <input type="text" class="form-control border-end-0 mb-0" placeholder="Cari Mobil"
                     aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <span class="input-group-text sit border-start-0" id="basic-addon2"><i class="bi bi-search"></i></span>
             </div>

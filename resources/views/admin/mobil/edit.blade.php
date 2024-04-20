@@ -53,7 +53,8 @@
                         <div class="mb-3 form-group">
                             <label for="deskripsi" class="form-label">Deskripsi</label>
                             <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3"
-                                value="{{ old('deskripsi', $mobil->deskripsi) }}"></textarea>
+                                value="{{ old('deskripsi', $mobil->deskripsi) }}">
+                            </textarea>
                         </div>
                         <div class="mb-3 form-group">
                             <label class="form-check-label" for="p3k">P3K</label>
@@ -111,7 +112,6 @@
                     </form>
                 </div>
             </div>
-
         </div>
     </div>
 @endsection
