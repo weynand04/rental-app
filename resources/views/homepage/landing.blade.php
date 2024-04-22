@@ -7,12 +7,16 @@
                     <div class="img-cover">
                         <img class="rounded" src="{{ Storage::url($item->gambar) }}" alt=""></img>
                     </div>
-                    <div class="det mt-2 ">
-                        <h4 class="mb-0">{{ $item->nama }}
-                            <span
-                                class="badge {{ $item->status == 'tersedia' ? 'bg-success' : 'bg-warning' }} fs-8">{{ $item->status }}</span>
-                        </h4>
+                    <div class="det mt-2">
+                        <h4 class="mb-0 text-center">{{ $item->nama }}</h4>
                         <ul class="list-group my-2">
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold fs-8">Status</div>
+                                </div>
+                                <span
+                                    class="badge {{ $item->status == 'tersedia' ? 'bg-success' : 'bg-warning' }} rounded-pill">{{ $item->status }}</span>
+                            </li>
                             <li class="list-group-item d-flex justify-content-between align-items-start">
                                 <div class="ms-2 me-auto">
                                     <div class="fw-bold fs-8">Bahan Bakar</div>
