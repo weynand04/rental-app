@@ -38,7 +38,7 @@
                         </ul>
                     </div>
                     <div class="my-2">
-                        <a class="btn btn-primary w-100 fw-semi fs-8"> Sewa </a>
+                        <a class="btn btn-primary w-100 fw-semi fs-8" href="#"> Sewa </a>
                     </div>
                 </div>
             </div>
